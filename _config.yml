@@ -60,3 +60,7 @@ topics:
   - name: Arxiv
     web_url: https://arxiv.org/search/?searchtype=author&query=Make%2C+M
     image_url: https://cis.cornell.edu/sites/default/files/styles/square_thumbnail/public/Screen%20Shot%202018-09-04%20at%2010.17.51%20AM.png?itok=dxbUcd1u
+
+  - name: M.Sc. Thesis
+    web_url: https://repository.tudelft.nl/islandora/object/uuid:78d0c912-47fb-4efb-8953-ad33d8fc7e96?collection=education
+    image_url: https://i.pinimg.com/originals/b3/9f/f8/b39ff8593414044bc1ab3a232e59cc12.jpg
