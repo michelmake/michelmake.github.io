@@ -20,7 +20,7 @@ Below you will find the 24-hour measurements of the sensor (currently still loca
 
 Below you are the 7-day measurements of the sensor.
 
-![image](https://www.madavi.de/sensor/images/sensor-esp8266-2634858-dht-1-day.pngg)
+![image](https://www.madavi.de/sensor/images/sensor-esp8266-2634858-dht-1-week.png)
 ![image](https://www.madavi.de/sensor/images/sensor-esp8266-2634858-dht-25-week.png)
 ![image](https://www.madavi.de/sensor/images/sensor-esp8266-2634858-sds011-1-week.png)
 ![image](https://www.madavi.de/sensor/images/sensor-esp8266-2634858-sds011-25-week.png)
