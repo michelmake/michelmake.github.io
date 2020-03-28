@@ -45,5 +45,5 @@ Below are the measurements of the sensor over one year.
 
 ### Notes
 
-- Sensor placed outside on 28.03.2020. 
+- Sensor placed outside on 28.03.2020 (after first running it indoors for seve days) 
 - Outdoor sensor location: calm street approx. three meters above local street level
