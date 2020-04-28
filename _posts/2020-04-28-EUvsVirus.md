@@ -14,7 +14,7 @@ the initial version on the project GitHub:
 
 <https://eusim.github.io/>
 
-![](https://raw.githubusercontent.com/michelmake/michelmake.github.io/graphics/screen-capt.gif)
+![](../graphics/screen-capt.gif)
 
 
 
