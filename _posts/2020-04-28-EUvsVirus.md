@@ -10,10 +10,10 @@ team was to create a simple tool that can be used by educators to explain how a 
 within a population (See the [DevPost](https://devpost.com/software/political-policies-effect-on-covid-19-spread-inside-the-eu-uamhdv)). 
 
 Although the resulting tool is far from being finished, you can play with 
-the initial version on the project GitHub:
+the initial version by clicking on the GIF below:
 
-<https://eusim.github.io/>
-
+<a href="https://eusim.github.io/">
 <figure><center>
   <img width="300" src="../../../../graphics/screen-capt.gif"/>
 </center></figure>
+</a>
