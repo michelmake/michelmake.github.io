@@ -18,7 +18,6 @@ defaults:
 
 posts:
     title: Blog posts
-    show_avatar: true
 projects:
   sort_by: pushed
   # sort_by options:
@@ -43,7 +42,7 @@ social_media:
   # medium: your_username
   # stackoverflow: your_user_id
   # telegram: your_username
-  # twitter: your_username
+  twitter: Michel_Mke
   # unsplash: your_username
   # vk: your_username
   website: https://www.cats.rwth-aachen.de/cms/CATS/Der-Lehrstuhl/Team/~ouyl/Make-Michel/lidx/1/
