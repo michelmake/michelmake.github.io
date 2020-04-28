@@ -1,6 +1,8 @@
 ---
 title: "Basic SIR model to simulate COVID-19 in Europe"
 published: true
+show-avatar: true
+image: ../../../../graphics/thumbnail-eusim.png
 ---
 
 ### EUvsVirus
