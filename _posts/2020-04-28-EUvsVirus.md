@@ -14,8 +14,5 @@ the initial version on the project GitHub:
 
 <https://eusim.github.io/>
 
-![](../graphics/screen-capt.gif)
 
-
-
-
+<img src="../graphics/screen-capt.gif" alt="hi" class="inline"/>
