@@ -18,6 +18,7 @@ defaults:
 
 posts:
     title: Blog posts
+    show_avatar: true
 projects:
   sort_by: pushed
   # sort_by options:
