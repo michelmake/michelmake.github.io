@@ -12,8 +12,10 @@ within a population (See the [DevPost](https://devpost.com/software/political-po
 Although the resulting tool is far from being finished, you can play with 
 the initial version by clicking on the GIF below:
 
-<a href="https://eusim.github.io/">
+
 <figure><center>
-  <img width="300" src="../../../../graphics/screen-capt.gif"/>
+  <a href="https://eusim.github.io/">
+    <img width="300" src="../../../../graphics/screen-capt.gif"/>
+  </a>
 </center></figure>
-</a>
+
