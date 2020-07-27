@@ -9,7 +9,7 @@ Already long time ago I was tinkering with an air quality measuring device. It's
 
 ### Live Data
 
-Live data can be accessed through this [Grafana dashboard](https://api-rrd.madavi.de/grafana/d/GUaL5aZMz/pm-sensors?orgId=1&var-chipID=esp8266-2634858&theme=light).
+Live data can be accessed through this [Grafana dashboard](https://api-rrd.madavi.de/grafana/d/GUaL5aZMz/pm-sensors?orgId=1).
 
 ### Notes
 
