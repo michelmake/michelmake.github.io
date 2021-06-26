@@ -5,8 +5,6 @@ show-avatar: true
 image: ../../../../graphics/thumbnail-eusim.png
 ---
 
-### EUvsVirus
-
 In the past weekend I joined the [EUvsVirus](https://euvsvirus.org/) hackathon. The goal of our
 team was to create a simple tool that can be used by educators to explain how a virus can spread
 within a population (See the [DevPost](https://devpost.com/software/political-policies-effect-on-covid-19-spread-inside-the-eu-uamhdv)). 

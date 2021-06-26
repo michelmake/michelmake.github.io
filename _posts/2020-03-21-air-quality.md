@@ -3,9 +3,10 @@ title: "Measuring Local Air Quality"
 published: true
 ---
 
-### Luftdaten.Info
 
-Already long time ago I was tinkering with an air quality measuring device. It's a simple Arduino-based device as described on the [luftdaten.info](https://luftdaten.info/) project website. Today, I resurrected it from my closet and gave it life.
+Already long time ago I was tinkering with an air quality measuring device. 
+It's a simple Arduino-based device as described on the [luftdaten.info](https://luftdaten.info/) project website. 
+Today, I resurrected it from my closet and gave it life.
 
 ### Live Data
 

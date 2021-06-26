@@ -3,7 +3,7 @@ title: "Surf Cams at Brouwersdam"
 published: true
 ---
 
-### Simply the Brouwersdam Cams
+Here are simply the live-stream cams at brouwersdam
 
 
 [![Live Cam 1](http://img.youtube.com/vi/9VxYAMcgocM/0.jpg)](https://youtu.be/9VxYAMcgocM)

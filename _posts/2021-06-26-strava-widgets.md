@@ -4,11 +4,10 @@ published: true
 show-avatar: true
 ---
 
-### Testing Strava widgets. 
 
-Below are two of the basic Strava widgets one can take from the Strava website.
-
-Simply go to your personal page below the **stats** table that shows your statistics
+Below are two of the basic Strava widgets one can take from the Strava website. To use such 
+widgets, simply 
+go to your personal page below the **stats** table that shows your statistics
 you'll find a button button that says ***share runs***. The popup shows the following 
 code to embed a widget:
 
