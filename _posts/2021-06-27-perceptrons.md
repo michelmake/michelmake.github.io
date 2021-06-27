@@ -91,10 +91,52 @@ AND or OR gat. For example:
 ![perceptron](/assets/nand-gate.svg)
 {: refdef}
 
-This perceptron is set with weights $-2$ for both inputs and a bias of $3$. Hence binary inputs yields the following outputs:
+This perceptron is set with weights $-2$ for both inputs and a bias of $3$.
+Hence binary inputs yields the following outputs:
+<center>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-zs3r{background-color:#9b9b9b;border-color:#656565;text-align:center;vertical-align:top}
+.tg .tg-mtln{background-color:#c0c0c0;border-color:#656565;text-align:center;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-zs3r">$x_1$</th>
+    <th class="tg-zs3r">$x_2$</th>
+    <th class="tg-zs3r">Perceptron function</th>
+    <th class="tg-zs3r">Output</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-mtln">$0$</td>
+    <td class="tg-mtln">$0$</td>
+    <td class="tg-mtln">$0 * (-2) + 0 * (-2) + 3 = 3$</td>
+    <td class="tg-mtln"><span style="font-weight:400;font-style:normal">$1$</span></td>
+  </tr>
+  <tr>
+    <td class="tg-mtln"><span style="font-weight:400;font-style:normal">$1$</span></td>
+    <td class="tg-mtln"><span style="font-weight:400;font-style:normal">$0$</span></td>
+    <td class="tg-mtln"><span style="font-weight:400;font-style:normal">$1 * (-2) + 0 * (-2) + 3 = 1$</span></td>
+    <td class="tg-mtln"><span style="font-weight:400;font-style:normal">$1$</span></td>
+  </tr>
+  <tr>
+    <td class="tg-mtln"><span style="font-weight:400;font-style:normal">$1$</span></td>
+    <td class="tg-mtln"><span style="font-weight:400;font-style:normal">$1$</span></td>
+    <td class="tg-mtln"><span style="font-weight:400;font-style:normal">$1 * (-2) + 1 * (-2) + 3 = -1$</span></td>
+    <td class="tg-mtln"><span style="font-weight:400;font-style:normal">$0$</span></td>
+  </tr>
+</tbody>
+</table>
+</center>
 
-| $x_1$ | $x_2$ |      Perceptron function       | Output |
-|:-----:|:-----:|:------------------------------:|:------:|
-|  $0$  |  $0$  | $0 * (-2) + 0 * (-2) + 3 = 3$  |  $1$   |
-|  $0$  |  $1$  | $0 * (-2) + 1 * (-2) + 3 = 1$  |  $1$   |
-|  $1$  |  $1$  | $1 * (-2) + 1 * (-2) + 3 = -1$ |  $0$   |
+This fact gives us the ability to construct any logic function simply using
+perceptron with the right weights and biases.
+
+
+***To be continued***
