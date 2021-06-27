@@ -1,9 +1,23 @@
-<h2 {% if site.style == 'dark' %}class="text-white"{% endif %}>My Notes</h2>
-<p class="f4 mb-4 {% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">Random interesting notes.</p>
+<h2 {% if site.style == 'dark' %}class="text-white"{% endif %}>Latest Posts</h2>
+<p class="f4 mb-4 {% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">Selection
+of the latest posts.</p>
 <div class="d-sm-flex flex-wrap gutter-condensed mb-4">
   {% for post in site.posts limit: 6 %}
     <div class="col-sm-6 col-md-12 col-lg-6 col-xl-4 mb-3">
       {% include post-card.html %}
     </div>
   {% endfor %}
+</div>
+
+<h2 {% if site.style == 'dark' %}class="text-white"{% endif %}>Machine Learning</h2>
+<p class="f4 mb-4 {% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">Posts
+related to ML.</p>
+<div class="d-sm-flex flex-wrap gutter-condensed mb-4">
+{% for tag in site.tags %}
+    {% for post in tag[1] %}
+        <div class="col-sm-6 col-md-12 col-lg-6 col-xl-4 mb-3">
+          {% include post-card.html %}
+        </div>
+    {% endfor %}
+{% endfor %}
 </div>
