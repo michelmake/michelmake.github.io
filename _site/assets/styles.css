@@ -199,3 +199,9 @@
 .article li ul, .article li ol { padding-left: 16px; margin-bottom: 0px; }
 
 .min-height-full { min-height: 100vh; }
+
+table { border-spacing: 3; border: 1px solid #000000; }
+
+th { border: 1px solid #000000; }
+
+td { border: 1px solid #000000; }
