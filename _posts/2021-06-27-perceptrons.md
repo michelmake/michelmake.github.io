@@ -1,10 +1,10 @@
 ---
 title: "Artificial Neurons: Perceptrons"
 published: true
-tag: ml
+tag: nn-dl
 ---
 
-This is the first post in a series on machine learning. This series is my attempt to get more familiar with the topic and is heavily based on the [book by Michael Nielsen](http://neuralnetworksanddeeplearning.com/).
+This is the first post in a series on neural networks and deep learning. This series is my attempt to get more familiar with the topic and is heavily based on the [book by Michael Nielsen](http://neuralnetworksanddeeplearning.com/).
 
 <hr>
 
