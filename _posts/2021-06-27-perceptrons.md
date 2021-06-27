@@ -98,15 +98,3 @@ This perceptron is set with weights $-2$ for both inputs and a bias of $3$. Henc
 |  $0$  |  $0$  | $0 * (-2) + 0 * (-2) + 3 = 3$  |  $1$   |
 |  $0$  |  $1$  | $0 * (-2) + 1 * (-2) + 3 = 1$  |  $1$   |
 |  $1$  |  $1$  | $1 * (-2) + 1 * (-2) + 3 = -1$ |  $0$   |
-|       |       |                                |        |
-|       |       |                                |        |
-|       |       |                                |        |
-
-<table>
-    <tr>
-        <th> 1</th> <th> 1</th> <th> 1</th>
-    </tr>
-    <tr>
-        <th> 1</th> <th> 1</th> <th> 1</th>
-    </tr>
-</table>
