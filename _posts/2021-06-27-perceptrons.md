@@ -4,6 +4,10 @@ published: true
 tag: ml
 ---
 
+This is the first post in a series on machine learning. This series is my attempt to get more familiar with the topic and is heavily based on the [book by Michael Nielsen](http://neuralnetworksanddeeplearning.com/chap1.html).
+
+<hr>
+
 A *perceptron* is an artificial neuron. Although in machine learning *Sigmoid
 neurons* are more commonly used, it is still useful to have a look at
 perceptrons.
