@@ -9,9 +9,9 @@ of the latest posts.</p>
   {% endfor %}
 </div>
 
-<h2 {% if site.style == 'dark' %}class="text-white"{% endif %}>Machine Learning</h2>
+<h2 {% if site.style == 'dark' %}class="text-white"{% endif %}>Neural Networks and Deep Learning</h2>
 <p class="f4 mb-4 {% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">Posts
-related to ML.</p>
+related to neural networks and deep learning.</p>
 <div class="d-sm-flex flex-wrap gutter-condensed mb-4">
 {% for tag in site.tags %}
     {% for post in tag[1] %}
