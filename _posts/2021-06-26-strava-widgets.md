@@ -1,5 +1,5 @@
 ---
-title: "Testing Strava Widgets"
+title: "Strava Widgets"
 published: true
 show-avatar: true
 thumbnail: /assets/strava-thumbnail.png

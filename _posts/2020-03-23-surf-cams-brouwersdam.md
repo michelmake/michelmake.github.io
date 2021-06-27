@@ -1,6 +1,7 @@
 ---
 title: "Surf Cams at Brouwersdam"
 published: true
+thumbnail: http://i3.ytimg.com/vi/9VxYAMcgocM/maxresdefault.jpg
 ---
 
 Here are simply the live-stream cams at brouwersdam

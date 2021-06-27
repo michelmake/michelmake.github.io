@@ -42,7 +42,7 @@ social_media:
   # medium: your_username
   # stackoverflow: your_user_id
   # telegram: your_username
-  twitter: Michel_Mke
+  # twitter: Michel_Mke
   # unsplash: your_username
   # vk: your_username
   website: https://www.cats.rwth-aachen.de/cms/CATS/Der-Lehrstuhl/Team/~ouyl/Make-Michel/lidx/1/
@@ -64,7 +64,7 @@ topics:
   - name: M.Sc. Thesis
     web_url: https://repository.tudelft.nl/islandora/object/uuid:78d0c912-47fb-4efb-8953-ad33d8fc7e96?collection=education
     image_url: https://i.pinimg.com/originals/b3/9f/f8/b39ff8593414044bc1ab3a232e59cc12.jpg
-    
+
   - name: Dr. Thesis
     web_url: https://publications.rwth-aachen.de/record/816674
     image_url_rwth: https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/RWTH_Logo_3.svg/200px-RWTH_Logo_3.svg.png
