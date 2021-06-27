@@ -2,8 +2,8 @@
 <p class="f4 mb-4 {% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">Selection
 of the latest posts.</p>
 <div class="d-sm-flex flex-wrap gutter-condensed mb-4">
-  {% for post in site.posts limit: 6 %}
-    <div class="col-sm-6 col-md-12 col-lg-6 col-xl-4 mb-3">
+  {% for post in site.posts limit: 4 %}
+    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 mb-3">
       {% include post-card.html %}
     </div>
   {% endfor %}
@@ -11,11 +11,11 @@ of the latest posts.</p>
 
 <h2 {% if site.style == 'dark' %}class="text-white"{% endif %}>Neural Networks and Deep Learning</h2>
 <p class="f4 mb-4 {% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">Posts
-related to neural networks and deep learning.</p>
+related to neural netwokrs and machine learning..</p>
 <div class="d-sm-flex flex-wrap gutter-condensed mb-4">
 {% for tag in site.tags %}
     {% for post in tag[1] %}
-        <div class="col-sm-6 col-md-12 col-lg-6 col-xl-4 mb-3">
+        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 mb-3">
           {% include post-card.html %}
         </div>
     {% endfor %}

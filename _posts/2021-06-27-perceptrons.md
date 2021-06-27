@@ -2,6 +2,7 @@
 title: "Artificial Neurons: Perceptrons"
 published: true
 tag: nn-dl
+thumbnail: /assets/perceptron.svg
 ---
 
 This is the first post in a series on neural networks and deep learning. This series is my attempt to get more familiar with the topic and is heavily based on the [book by Michael Nielsen](http://neuralnetworksanddeeplearning.com/).
@@ -142,5 +143,5 @@ Hence binary inputs yields the following outputs:
 This fact gives us the ability to construct any logic function simply using
 perceptron with the right weights and biases.
 
-
+<hr>
 ***To be continued***

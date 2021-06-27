@@ -8,6 +8,11 @@
   </div>
   <div>
     <p class="{% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %} mb-5">
+        <div class="col-sm-12"  >
+          <center>
+            <a href="{{ post.url }}" ><img src="{{ post.thumbnail }}" style="max-width: 70%" /></a>
+          </center>
+        </div>
         {{ post.excerpt }}
     </p>
   </div>
