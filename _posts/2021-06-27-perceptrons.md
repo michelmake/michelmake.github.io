@@ -5,7 +5,9 @@ tag: nn-dl
 thumbnail: /assets/perceptron.svg
 ---
 
-This is the first post in a series on neural networks and deep learning. This series is my attempt to get more familiar with the topic and is heavily based on the [book by Michael Nielsen](http://neuralnetworksanddeeplearning.com/).
+This is the first post in a series on neural networks and deep learning. This
+series is my attempt to get more familiar with the topic and is heavily based on
+the [book by Michael Nielsen](http://neuralnetworksanddeeplearning.com/).
 
 <hr>
 
@@ -141,7 +143,44 @@ Hence binary inputs yields the following outputs:
 </center>
 
 This fact gives us the ability to construct any logic function simply using
-perceptron with the right weights and biases.
+perceptron with the right weights and biases. Below you can see a logic design
+which adds two bits by a adding them and giving the carry bit if it exists:
+
+{:refdef: style="text-align: center;"}
+![perceptron](/assets/bit-sum-logic.svg)
+{: refdef}
+
+This logic can be constructed using a small network of perceptrons to:
+
+
+{:refdef: style="text-align: center;"}
+![perceptron](/assets/bit-sum-perceptron.svg)
+{: refdef}
+
+Note, that in the above network the output of one of the perceptrons is used as
+input twice for a single other perceptron (the one that sets the carry bit).
+Hence, when looking at the table of outputs for the perceptron with weights and
+bias $w_{i,j} =-2$ and $b=3$ respectively, this double input simply results in a
+bit flip. This double input can be interpreted as using a single input with
+$w_1$ and $b=3$. Hence the whole network would then look as follows:
+
+{:refdef: style="text-align: center;"}
+![perceptron](/assets/bit-sum-perceptron-single.svg)
+{: refdef}
+
+Here, the input variables are also drawn as perceptrons that simply have no
+input. This has no particular meaning other than the indication that these are
+inputs at the input side of the network.
+
+
+## To conclude...
+
+From the above, it seems as if artificial neurons such as the perceptron, didn't
+really bring us closer to the complex task of digit recognition. However, as it
+turns out, it is possible to design *learning algorithms*, which automatically
+"tweak" the weights and biases of neural networks in order to make more
+sophisticated decisions without the intervention of a human programmer.
 
 <hr>
-***To be continued***
+
+In the next post, we will take a different approach by using something called a *Sigmoid*
