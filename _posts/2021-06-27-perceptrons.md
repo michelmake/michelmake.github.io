@@ -183,4 +183,5 @@ sophisticated decisions without the intervention of a human programmer.
 
 <hr>
 
-In the next post, we will take a different approach by using something called a *Sigmoid*
+In the next post, we will take a different approach by using something called a
+*Sigmoid*.
