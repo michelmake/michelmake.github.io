@@ -1,0 +1,29 @@
+%\documentclass{standalone}
+% use this for svg output
+%\documentclass[tikz,convert={outfile=\jobname.svg}]{standalone}
+\documentclass[crop,tikz,convert={outext=.svg,command=\unexpanded{pdf2svg \infile\space\outfile}},multi=false]{standalone}[2012/04/13]
+
+\usepackage{./nn}
+
+\begin{document}
+    \begin{neuralnetwork}[height=4]
+        \newcommand{\x}[2]{$x_#2$}
+        \newcommand{\y}[2]{$\hat{y}_#2$}
+        \newcommand{\hfirst}[2]{\small $h^{(1)}_#2$}
+        \newcommand{\hsecond}[2]{\small $h^{(2)}_#2$}
+        \basiclayer[count=4, bias=false]
+        \basiclayer[count=4, bias=false] \linklayers
+        \basiclayer[count=1,] \linklayers
+        \arrowlayer[count=1 ] \linklayers
+
+        % Top arros and text
+        \node (A) at (1.3, 0) {$w + \Delta w$};
+        \node (B) at (9, -2.4) {$\text{output}+\Delta\;\text{output}$};
+        % arrows
+        \draw[-latex, to path={-| (\tikztotarget)},anchor=center, thick]
+        (A) edge (B);
+
+         %\node[anchor=south] (C) at (5.15, 0) {};
+
+    \end{neuralnetwork}
+\end{document}

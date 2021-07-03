@@ -72,7 +72,7 @@ it holds for the third and final layer in the network. Note, in this network,
 the output of a single perceptron is used as input for multiple perceptrons.
 
 To rewrite the conditional behaviour of the perceptron in Equation
-\eqref{perceptron} a dotproduct can be used:
+\eqref{perceptron} a dot product can be used:
 
 $$ \begin{equation}
 \text{output} =
@@ -82,7 +82,7 @@ $$ \begin{equation}
 \end{cases}\label{perceptron-simplified}
  \end{equation} $$
 
-In this case, the threshold $\alpha$ is replaced by the soc alled *bias*, $b
+In this case, the threshold $\alpha$ is replaced by the so called *bias*, $b
 \equiv - \alpha$. The bias controls how quickly a perceptron's output will
 switch for $0$ to $1$ by simply adding an integer to the combined value of the
 weighted inputs. Similarly a weight can do the same for a single input.
@@ -91,7 +91,7 @@ In simplified words, the bias determines how quickly the perceptron *fires*. A
 very large bias will allow the perceptron to fire easily, while a very negative
 bias will do the opposite.
 
-A perceptron can aslo be used to construct computational functions such as an
+A perceptron can also be used to construct computational functions such as an
 AND or OR gat. For example:
 
 {:refdef: style="text-align: center;"}
