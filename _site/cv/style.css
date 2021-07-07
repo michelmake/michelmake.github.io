@@ -33,7 +33,7 @@ font-style: italic;
 	width: 90%;
 	max-width: 1400px;
 	background: #f3f3f3;
-	margin: 30px auto;
+	margin: 0px auto;
 }
 
 .mainDetails {
@@ -69,7 +69,7 @@ font-style: italic;
 	width: 100%;
 	height: auto;
 	-webkit-border-radius: 50px;
-	border-radius: 50px;
+	border-radius: 100px;
 }
 
 #name {
@@ -411,3 +411,12 @@ section:last-child {
 .basic{width: 25%; background-color: #808080;}
 .intermediate {width: 50%; background-color: #808080;}
 .advanced {width: 100%; background-color: #808080;}
+
+a {
+    color: #ddd;
+}
+
+p.no-bot {
+	font-style: bold;
+  margin-bottom: 0px;
+}
