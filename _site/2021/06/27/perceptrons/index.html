@@ -1,0 +1,305 @@
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html class="min-height-full">
+  <head>
+    <meta charset="utf-8">
+    <title>Artificial Neurons: Perceptrons</title>
+    <meta name="description" content="This is the first post in a series on neural networks and deep learning. Thisseries is my attempt to get more familiar with the topic and is heavily based onthe book by Michael Nielsen.A perceptron is an artificial neuron. Although in machine learning Sigmoidneurons are more commonly used, it is ..." />
+    <meta property="og:title" content="Michel Make" />
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/10108270?v=4" />
+    <meta property="og:description" content="This is the first post in a series on neural networks and deep learning. Thisseries is my attempt to get more familiar with the topic and is heavily based onthe book by Michael Nielsen.A perceptron is an artificial neuron. Although in machine learning Sigmoidneurons are more commonly used, it is ..." />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="/assets/styles.css" rel="stylesheet" type="text/css">
+  </head>
+  <body class="bg-white min-height-full" >
+
+
+
+
+
+  <div class="d-md-flex min-height-full border-md-bottom">
+    <div class="flex-self-stretch border-md-right border-gray-light bg-white col-md-5 col-lg-4 col-xl-3 px-4 px-md-6 px-lg-7 py-6">
+      
+
+<img src="https://michelmake.github.io/cv/my-pic-square.jpg" class="circle mb-3" style="max-width: 150px;">
+<h1 class=" mb-2 lh-condensed">Michel Make</h1>
+<p class="mb-3 f4 text-gray">
+  Technology enthusiast working in computational engineering sciences.
+</p>
+
+
+  <div class="f4 mb-6">
+    
+      <div class="d-flex flex-items-center mb-3">
+        <svg height="20" class="octicon octicon-mark-github mr-2 v-align-middle" fill="#24292e" aria-label="GitHub" viewBox="0 0 16 16" version="1.1" width="20" role="img"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+        <a href="https://github.com/michelmake" >
+          @michelmake
+        </a>
+      </div>
+    
+    
+    
+      <div class="d-flex flex-items-center mb-3 ">
+        <svg height="20" class="octicon octicon-location mr-2 v-align-middle" fill="#24292e" aria-label="Location" viewBox="0 0 16 16" version="1.1" width="20" role="img"><path fill-rule="evenodd" d="M11.536 3.464a5 5 0 010 7.072L8 14.07l-3.536-3.535a5 5 0 117.072-7.072v.001zm1.06 8.132a6.5 6.5 0 10-9.192 0l3.535 3.536a1.5 1.5 0 002.122 0l3.535-3.536zM8 9a2 2 0 100-4 2 2 0 000 4z"></path></svg>
+        Aachen, Germany
+      </div>
+    
+    
+      <div class="d-flex flex-wrap flex-items-start ">
+        
+          <div class="mr-3 mb-3">
+            
+            
+            <a href="https://www.linkedin.com/in/michelmake" class="tooltipped tooltipped-se" aria-label="LinkedIn: michelmake">
+              <svg height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 18"><path d="M3.94 2A2 2 0 1 1 2 0a2 2 0 0 1 1.94 2zM4 5.48H0V18h4zm6.32 0H6.34V18h3.94v-6.57c0-3.66 4.77-4 4.77 0V18H19v-7.93c0-6.17-7.06-5.94-8.72-2.91z" fill="#959da5"/></svg><span class="d-none">LinkedIn</span>
+            </a>
+          </div>
+        
+          <div class=" mb-3">
+            
+            
+            <a href="https://www.cats.rwth-aachen.de/cms/CATS/Der-Lehrstuhl/Team/~ouyl/Make-Michel/lidx/1/" class="tooltipped tooltipped-se" aria-label="Website: https://www.cats.rwth-aachen.de/cms/CATS/Der-Lehrstuhl/Team/~ouyl/Make-Michel/lidx/1/">
+              <svg class="octicon octicon-globe" viewBox="0 0 14 16" version="1.1" width="20" height="20" aria-hidden="true"><path fill-rule="evenodd" d="M7 1C3.14 1 0 4.14 0 8s3.14 7 7 7c.48 0 .94-.05 1.38-.14-.17-.08-.2-.73-.02-1.09.19-.41.81-1.45.2-1.8-.61-.35-.44-.5-.81-.91-.37-.41-.22-.47-.25-.58-.08-.34.36-.89.39-.94.02-.06.02-.27 0-.33 0-.08-.27-.22-.34-.23-.06 0-.11.11-.2.13-.09.02-.5-.25-.59-.33-.09-.08-.14-.23-.27-.34-.13-.13-.14-.03-.33-.11s-.8-.31-1.28-.48c-.48-.19-.52-.47-.52-.66-.02-.2-.3-.47-.42-.67-.14-.2-.16-.47-.2-.41-.04.06.25.78.2.81-.05.02-.16-.2-.3-.38-.14-.19.14-.09-.3-.95s.14-1.3.17-1.75c.03-.45.38.17.19-.13-.19-.3 0-.89-.14-1.11-.13-.22-.88.25-.88.25.02-.22.69-.58 1.16-.92.47-.34.78-.06 1.16.05.39.13.41.09.28-.05-.13-.13.06-.17.36-.13.28.05.38.41.83.36.47-.03.05.09.11.22s-.06.11-.38.3c-.3.2.02.22.55.61s.38-.25.31-.55c-.07-.3.39-.06.39-.06.33.22.27.02.5.08.23.06.91.64.91.64-.83.44-.31.48-.17.59.14.11-.28.3-.28.3-.17-.17-.19.02-.3.08-.11.06-.02.22-.02.22-.56.09-.44.69-.42.83 0 .14-.38.36-.47.58-.09.2.25.64.06.66-.19.03-.34-.66-1.31-.41-.3.08-.94.41-.59 1.08.36.69.92-.19 1.11-.09.19.1-.06.53-.02.55.04.02.53.02.56.61.03.59.77.53.92.55.17 0 .7-.44.77-.45.06-.03.38-.28 1.03.09.66.36.98.31 1.2.47.22.16.08.47.28.58.2.11 1.06-.03 1.28.31.22.34-.88 2.09-1.22 2.28-.34.19-.48.64-.84.92s-.81.64-1.27.91c-.41.23-.47.66-.66.8 3.14-.7 5.48-3.5 5.48-6.84 0-3.86-3.14-7-7-7L7 1zm1.64 6.56c-.09.03-.28.22-.78-.08-.48-.3-.81-.23-.86-.28 0 0-.05-.11.17-.14.44-.05.98.41 1.11.41.13 0 .19-.13.41-.05.22.08.05.13-.05.14zM6.34 1.7c-.05-.03.03-.08.09-.14.03-.03.02-.11.05-.14.11-.11.61-.25.52.03-.11.27-.58.3-.66.25zm1.23.89c-.19-.02-.58-.05-.52-.14.3-.28-.09-.38-.34-.38-.25-.02-.34-.16-.22-.19.12-.03.61.02.7.08.08.06.52.25.55.38.02.13 0 .25-.17.25zm1.47-.05c-.14.09-.83-.41-.95-.52-.56-.48-.89-.31-1-.41-.11-.1-.08-.19.11-.34.19-.15.69.06 1 .09.3.03.66.27.66.55.02.25.33.5.19.63h-.01z"/></svg><span class="d-none">Website</span>
+            </a>
+          </div>
+        
+      </div>
+    
+      <div>
+        Find my CV 
+          <a href="/cv/cv" >
+            here
+        </a>
+      </div>
+    
+  </div>
+
+
+    </div>
+
+    <div class="col-md-7 col-lg-8 col-xl-9 px-4 py-6 px-lg-7 border-top border-md-top-0 bg-gray-light" >
+      <div class="mx-auto" style="max-width: 900px;">
+        <div class="f4  mb-6">
+          <div class="f4 ">
+            <p class="f5"><a href="http://localhost:4000/" class="d-flex flex-items-center "><svg height="16" class="octicon octicon-chevron-left mr-2 v-align-middle" fill="#24292e" aria-label="Home" viewBox="0 0 16 16" version="1.1" width="16" role="img"><path fill-rule="evenodd" d="M9.78 12.78a.75.75 0 01-1.06 0L4.47 8.53a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L6.06 8l3.72 3.72a.75.75 0 010 1.06z"></path></svg>Home</a></p>
+            <h1 class="f00-light lh-condensed">Artificial Neurons: Perceptrons</h1>
+            <p class="text-gray mb-5">Published Jun 27, 2021</p>
+            
+  
+    
+
+    
+
+    
+
+    
+  
+  <div class="article">
+    <p>This is the first post in a series on neural networks and deep learning. This
+series is my attempt to get more familiar with the topic and is heavily based on
+the <a href="http://neuralnetworksanddeeplearning.com/">book by Michael Nielsen</a>.</p>
+
+<hr />
+
+<p>A <em>perceptron</em> is an artificial neuron. Although in machine learning <em>Sigmoid
+neurons</em> are more commonly used, it is still useful to have a look at
+perceptrons.</p>
+
+<p>A perceptron takes multiple binary inputs and returns a single binary output. A
+schematic of a perceptron that takes 3 input signals is shown below:</p>
+
+<p style="text-align: center;"><img src="/assets/perceptron.svg" alt="perceptron" /></p>
+
+<p>Using a set of weights $w_j$ for each input $x_1$, the output of a perceptron is
+defined as follows:</p>
+
+\[\begin{equation}
+\text{output} =
+\begin{cases}
+    0,  &amp; \text{if } \sum_j w_j x_j \leq \alpha\\
+    1,  &amp; \text{if } \sum_j w_j x_j \geq \alpha
+\end{cases}\label{perceptron}
+ \end{equation}\]
+
+<p>Hence the perceptron has output $1$ if the combined weighted value of the
+ inputs  exceeds a given threshold $\alpha$.</p>
+
+<p>You can think of a perceptrons as simple input based decision makers. A simple
+ example  in which you could use a perceptron is to decide you need to wear a
+ jacket when you go  out. Given the following, a decision can be made:</p>
+
+<ol>
+  <li>$x_1:$ are there rainy clouds in the sky?</li>
+  <li>$x_2:$ is it hot?</li>
+  <li>$x_3:$ is it windy?</li>
+</ol>
+
+<p>Based on this <strong>binary</strong> input, a decision can easily be made. If you happen to
+not care about getting wet from the rain, a higher weight $w_1$ is given to the
+corresponding input $x_1$ variable in Equation \eqref{perceptron}. Modifying
+the threshold can significantly affect the decision making.</p>
+
+<p>For example lets say you don’t mind rain to much, the weight on the first input
+is set to $6$. Additionally, the weights for for the heat and wind are set to
+$2$ as you do not like either of them. In this situation, setting the threshold
+to $5$ or $7$ would lead to different decision making.</p>
+
+<p>From the above, it shows that a perceptron can be a useful as a decision maker.
+Of course, a single  perceptron is not very useful in making complex decisions.
+Combining multiple perceptrons in a larger network as shown below could,
+however, be used for more sophisticated decisions making.</p>
+
+<p style="text-align: center;"><img src="/assets/multiple-perceptrons.svg" alt="perceptron" /></p>
+
+<p>In the above, the first layer of perceptrons is making a decision based on $5$
+input variables. The second layer of perceptrons makes a decision based upon the
+output of the first layer of perceptrons. Hence, the second layer of perceptrons
+can make decisions on a more abstract sophisticated level. And it even more so,
+it holds for the third and final layer in the network. Note, in this network,
+the output of a single perceptron is used as input for multiple perceptrons.</p>
+
+<p>To rewrite the conditional behaviour of the perceptron in Equation
+\eqref{perceptron} a dot product can be used:</p>
+
+\[\begin{equation}
+\text{output} =
+\begin{cases}
+    0,  &amp; \text{if } \vec{w} \cdot \vec{x} + b \leq 0 \\
+    1,  &amp; \text{if } \vec{w} \cdot \vec{x} + b \geq 0
+\end{cases}\label{perceptron-simplified}
+ \end{equation}\]
+
+<p>In this case, the threshold $\alpha$ is replaced by the so called <em>bias</em>, $b
+\equiv - \alpha$. The bias controls how quickly a perceptron’s output will
+switch for $0$ to $1$ by simply adding an integer to the combined value of the
+weighted inputs. Similarly a weight can do the same for a single input.</p>
+
+<p>In simplified words, the bias determines how quickly the perceptron <em>fires</em>. A
+very large bias will allow the perceptron to fire easily, while a very negative
+bias will do the opposite.</p>
+
+<p>A perceptron can also be used to construct computational functions such as an
+AND or OR gat. For example:</p>
+
+<p style="text-align: center;"><img src="/assets/nand-gate.svg" alt="perceptron" /></p>
+
+<p>This perceptron is set with weights $-2$ for both inputs and a bias of $3$.
+Hence binary inputs yields the following outputs:</p>
+<center>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-zs3r{background-color:#9b9b9b;border-color:#656565;text-align:center;vertical-align:top}
+.tg .tg-mtln{background-color:#c0c0c0;border-color:#656565;text-align:center;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-zs3r">$x_1$</th>
+    <th class="tg-zs3r">$x_2$</th>
+    <th class="tg-zs3r">Perceptron function</th>
+    <th class="tg-zs3r">Output</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-mtln">$0$</td>
+    <td class="tg-mtln">$0$</td>
+    <td class="tg-mtln">$0 * (-2) + 0 * (-2) + 3 = 3$</td>
+    <td class="tg-mtln"><span style="font-weight:400;font-style:normal">$1$</span></td>
+  </tr>
+  <tr>
+    <td class="tg-mtln"><span style="font-weight:400;font-style:normal">$1$</span></td>
+    <td class="tg-mtln"><span style="font-weight:400;font-style:normal">$0$</span></td>
+    <td class="tg-mtln"><span style="font-weight:400;font-style:normal">$1 * (-2) + 0 * (-2) + 3 = 1$</span></td>
+    <td class="tg-mtln"><span style="font-weight:400;font-style:normal">$1$</span></td>
+  </tr>
+  <tr>
+    <td class="tg-mtln"><span style="font-weight:400;font-style:normal">$1$</span></td>
+    <td class="tg-mtln"><span style="font-weight:400;font-style:normal">$1$</span></td>
+    <td class="tg-mtln"><span style="font-weight:400;font-style:normal">$1 * (-2) + 1 * (-2) + 3 = -1$</span></td>
+    <td class="tg-mtln"><span style="font-weight:400;font-style:normal">$0$</span></td>
+  </tr>
+</tbody>
+</table>
+</center>
+
+<p>This fact gives us the ability to construct any logic function simply using
+perceptron with the right weights and biases. Below you can see a logic design
+which adds two bits by a adding them and giving the carry bit if it exists:</p>
+
+<p style="text-align: center;"><img src="/assets/bit-sum-logic.svg" alt="perceptron" /></p>
+
+<p>This logic can be constructed using a small network of perceptrons to:</p>
+
+<p style="text-align: center;"><img src="/assets/bit-sum-perceptron.svg" alt="perceptron" /></p>
+
+<p>Note, that in the above network the output of one of the perceptrons is used as
+input twice for a single other perceptron (the one that sets the carry bit).
+Hence, when looking at the table of outputs for the perceptron with weights and
+bias $w_{i,j} =-2$ and $b=3$ respectively, this double input simply results in a
+bit flip. This double input can be interpreted as using a single input with
+$w_1$ and $b=3$. Hence the whole network would then look as follows:</p>
+
+<p style="text-align: center;"><img src="/assets/bit-sum-perceptron-single.svg" alt="perceptron" /></p>
+
+<p>Here, the input variables are also drawn as perceptrons that simply have no
+input. This has no particular meaning other than the indication that these are
+inputs at the input side of the network.</p>
+
+<h2 id="to-conclude">To conclude…</h2>
+
+<p>From the above, it seems as if artificial neurons such as the perceptron, didn’t
+really bring us closer to the complex task of digit recognition. However, as it
+turns out, it is possible to design <em>learning algorithms</em>, which automatically
+“tweak” the weights and biases of neural networks in order to make more
+sophisticated decisions without the intervention of a human programmer.</p>
+
+<hr />
+
+<p>In the next post, we will take a different approach by using something called a
+<em>Sigmoid</em>.</p>
+
+  </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+inlineMath: [['$','$'], ['\\(','\\)']],
+processEscapes: true},
+jax: ["input/TeX","input/MathML","input/AsciiMath","output/CommonHTML"],
+extensions: ["tex2jax.js","mml2jax.js","asciimath2jax.js","MathMenu.js","MathZoom.js","AssistiveMML.js", "[Contrib]/a11y/accessibility-menu.js"],
+TeX: {
+extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"],
+equationNumbers: {
+autoNumber: "AMS"
+}
+}
+});
+</script>
+
+  </body>
+</html>
+

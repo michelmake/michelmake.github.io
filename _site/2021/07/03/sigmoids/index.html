@@ -1,0 +1,250 @@
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html class="min-height-full">
+  <head>
+    <meta charset="utf-8">
+    <title>Artificial Neurons: Sigmoids</title>
+    <meta name="description" content="This is the second post in a series on neural networks and deep learning. Thisseries is my attempt to get more familiar with the topic and is heavily based onthe book by Michael Nielsen.In this post we will be looking at something called a sigmoid. A sigmoids areartificial neurons similar to perc..." />
+    <meta property="og:title" content="Michel Make" />
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/10108270?v=4" />
+    <meta property="og:description" content="This is the second post in a series on neural networks and deep learning. Thisseries is my attempt to get more familiar with the topic and is heavily based onthe book by Michael Nielsen.In this post we will be looking at something called a sigmoid. A sigmoids areartificial neurons similar to perc..." />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="/assets/styles.css" rel="stylesheet" type="text/css">
+  </head>
+  <body class="bg-white min-height-full" >
+
+
+
+
+
+  <div class="d-md-flex min-height-full border-md-bottom">
+    <div class="flex-self-stretch border-md-right border-gray-light bg-white col-md-5 col-lg-4 col-xl-3 px-4 px-md-6 px-lg-7 py-6">
+      
+
+<img src="https://michelmake.github.io/cv/my-pic-square.jpg" class="circle mb-3" style="max-width: 150px;">
+<h1 class=" mb-2 lh-condensed">Michel Make</h1>
+<p class="mb-3 f4 text-gray">
+  Technology enthusiast working in computational engineering sciences.
+</p>
+
+
+  <div class="f4 mb-6">
+    
+      <div class="d-flex flex-items-center mb-3">
+        <svg height="20" class="octicon octicon-mark-github mr-2 v-align-middle" fill="#24292e" aria-label="GitHub" viewBox="0 0 16 16" version="1.1" width="20" role="img"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+        <a href="https://github.com/michelmake" >
+          @michelmake
+        </a>
+      </div>
+    
+    
+    
+      <div class="d-flex flex-items-center mb-3 ">
+        <svg height="20" class="octicon octicon-location mr-2 v-align-middle" fill="#24292e" aria-label="Location" viewBox="0 0 16 16" version="1.1" width="20" role="img"><path fill-rule="evenodd" d="M11.536 3.464a5 5 0 010 7.072L8 14.07l-3.536-3.535a5 5 0 117.072-7.072v.001zm1.06 8.132a6.5 6.5 0 10-9.192 0l3.535 3.536a1.5 1.5 0 002.122 0l3.535-3.536zM8 9a2 2 0 100-4 2 2 0 000 4z"></path></svg>
+        Aachen, Germany
+      </div>
+    
+    
+      <div class="d-flex flex-wrap flex-items-start ">
+        
+          <div class="mr-3 mb-3">
+            
+            
+            <a href="https://www.linkedin.com/in/michelmake" class="tooltipped tooltipped-se" aria-label="LinkedIn: michelmake">
+              <svg height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 18"><path d="M3.94 2A2 2 0 1 1 2 0a2 2 0 0 1 1.94 2zM4 5.48H0V18h4zm6.32 0H6.34V18h3.94v-6.57c0-3.66 4.77-4 4.77 0V18H19v-7.93c0-6.17-7.06-5.94-8.72-2.91z" fill="#959da5"/></svg><span class="d-none">LinkedIn</span>
+            </a>
+          </div>
+        
+          <div class=" mb-3">
+            
+            
+            <a href="https://www.cats.rwth-aachen.de/cms/CATS/Der-Lehrstuhl/Team/~ouyl/Make-Michel/lidx/1/" class="tooltipped tooltipped-se" aria-label="Website: https://www.cats.rwth-aachen.de/cms/CATS/Der-Lehrstuhl/Team/~ouyl/Make-Michel/lidx/1/">
+              <svg class="octicon octicon-globe" viewBox="0 0 14 16" version="1.1" width="20" height="20" aria-hidden="true"><path fill-rule="evenodd" d="M7 1C3.14 1 0 4.14 0 8s3.14 7 7 7c.48 0 .94-.05 1.38-.14-.17-.08-.2-.73-.02-1.09.19-.41.81-1.45.2-1.8-.61-.35-.44-.5-.81-.91-.37-.41-.22-.47-.25-.58-.08-.34.36-.89.39-.94.02-.06.02-.27 0-.33 0-.08-.27-.22-.34-.23-.06 0-.11.11-.2.13-.09.02-.5-.25-.59-.33-.09-.08-.14-.23-.27-.34-.13-.13-.14-.03-.33-.11s-.8-.31-1.28-.48c-.48-.19-.52-.47-.52-.66-.02-.2-.3-.47-.42-.67-.14-.2-.16-.47-.2-.41-.04.06.25.78.2.81-.05.02-.16-.2-.3-.38-.14-.19.14-.09-.3-.95s.14-1.3.17-1.75c.03-.45.38.17.19-.13-.19-.3 0-.89-.14-1.11-.13-.22-.88.25-.88.25.02-.22.69-.58 1.16-.92.47-.34.78-.06 1.16.05.39.13.41.09.28-.05-.13-.13.06-.17.36-.13.28.05.38.41.83.36.47-.03.05.09.11.22s-.06.11-.38.3c-.3.2.02.22.55.61s.38-.25.31-.55c-.07-.3.39-.06.39-.06.33.22.27.02.5.08.23.06.91.64.91.64-.83.44-.31.48-.17.59.14.11-.28.3-.28.3-.17-.17-.19.02-.3.08-.11.06-.02.22-.02.22-.56.09-.44.69-.42.83 0 .14-.38.36-.47.58-.09.2.25.64.06.66-.19.03-.34-.66-1.31-.41-.3.08-.94.41-.59 1.08.36.69.92-.19 1.11-.09.19.1-.06.53-.02.55.04.02.53.02.56.61.03.59.77.53.92.55.17 0 .7-.44.77-.45.06-.03.38-.28 1.03.09.66.36.98.31 1.2.47.22.16.08.47.28.58.2.11 1.06-.03 1.28.31.22.34-.88 2.09-1.22 2.28-.34.19-.48.64-.84.92s-.81.64-1.27.91c-.41.23-.47.66-.66.8 3.14-.7 5.48-3.5 5.48-6.84 0-3.86-3.14-7-7-7L7 1zm1.64 6.56c-.09.03-.28.22-.78-.08-.48-.3-.81-.23-.86-.28 0 0-.05-.11.17-.14.44-.05.98.41 1.11.41.13 0 .19-.13.41-.05.22.08.05.13-.05.14zM6.34 1.7c-.05-.03.03-.08.09-.14.03-.03.02-.11.05-.14.11-.11.61-.25.52.03-.11.27-.58.3-.66.25zm1.23.89c-.19-.02-.58-.05-.52-.14.3-.28-.09-.38-.34-.38-.25-.02-.34-.16-.22-.19.12-.03.61.02.7.08.08.06.52.25.55.38.02.13 0 .25-.17.25zm1.47-.05c-.14.09-.83-.41-.95-.52-.56-.48-.89-.31-1-.41-.11-.1-.08-.19.11-.34.19-.15.69.06 1 .09.3.03.66.27.66.55.02.25.33.5.19.63h-.01z"/></svg><span class="d-none">Website</span>
+            </a>
+          </div>
+        
+      </div>
+    
+      <div>
+        Find my CV 
+          <a href="/cv/cv" >
+            here
+        </a>
+      </div>
+    
+  </div>
+
+
+    </div>
+
+    <div class="col-md-7 col-lg-8 col-xl-9 px-4 py-6 px-lg-7 border-top border-md-top-0 bg-gray-light" >
+      <div class="mx-auto" style="max-width: 900px;">
+        <div class="f4  mb-6">
+          <div class="f4 ">
+            <p class="f5"><a href="http://localhost:4000/" class="d-flex flex-items-center "><svg height="16" class="octicon octicon-chevron-left mr-2 v-align-middle" fill="#24292e" aria-label="Home" viewBox="0 0 16 16" version="1.1" width="16" role="img"><path fill-rule="evenodd" d="M9.78 12.78a.75.75 0 01-1.06 0L4.47 8.53a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L6.06 8l3.72 3.72a.75.75 0 010 1.06z"></path></svg>Home</a></p>
+            <h1 class="f00-light lh-condensed">Artificial Neurons: Sigmoids</h1>
+            <p class="text-gray mb-5">Published Jul 03, 2021</p>
+            
+  
+    
+
+    
+
+    
+
+    
+  
+  <div class="article">
+    <p>This is the second post in a series on neural networks and deep learning. This
+series is my attempt to get more familiar with the topic and is heavily based on
+the <a href="http://neuralnetworksanddeeplearning.com/">book by Michael Nielsen</a>.</p>
+
+<p>In this post we will be looking at something called a <em>sigmoid</em>. A sigmoids are
+artificial neurons similar to <a href="/2021/06/27/perceptrons/">perceptrons</a>  discussed in the previous post. However, as will
+become apparent in this post, they are extremely useful for neural networks and
+machine learning.</p>
+
+<hr />
+
+<p>Suppose we have constructed a neural network using perceptrons. If we train this
+network to do a certain task, we want to make sure that a small change in a bias
+or weight, only has a small influence on the behaviour of the network. From what
+we have seen in the <a href="/2021/06/27/perceptrons/">previous post</a>, this
+is not the case with a network of perceptrons. A slight change of a bias or
+weight can change a perceptron’s output from 0 to 1 (or vice versa). In turn,
+such a change can completely alter the behaviour of the neural network.</p>
+
+<p>When training a neural network, it is not desirable to have neurons the respond
+in a binary fashion to their input. In other words, what we want is that for a
+small change in weight or bias, the output signal is only slightly changed.
+Perceptrons, with their basic binary (<em>on/off</em>-type) output, are simply not
+useable for this.</p>
+
+<p style="text-align: center;"><img src="/assets/weight-and-bias-affected-output.svg" alt="weights and biasn" /></p>
+
+<p>Sigmoid neurons, are the solution to the binary ouptut of perceptrons. Sigmoids
+have a small ouput variation when slightly variying it’s weight or bias. This
+allows us to train a sigmoid-based neural network. A sigmoid, similarly to a
+perceptron, takes one or more input variables, and uses these to provides an
+output signal.</p>
+
+<p style="text-align: center;"><img src="/assets/sigmoid.svg" alt="sigmoid" /></p>
+
+<p>The key difference, however, is that sigmoids accept any signal between 0 and 1,
+and similarly, its output can be anywhere between 0 and 1. E.g. 0.638 could be a
+valid input for a sigmoid neuron. Sigmoid neurons also comes with weights for
+each input $w_1$, $w_2$ and $w_3$ for the example given in the figure above.
+Similarly, it comes wiht an overal bias $b$. The non-binary output, on the other
+hand, is defined as $\sigma (w\cdot x + b)$, where $\sigma$ is the so-called
+<em>sigmoid function</em> <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> defined by:</p>
+
+\[\begin{equation}
+\sigma(z) = \frac{1}{1+e^{-z}}
+\label{eq:sigmoid-function}
+ \end{equation}\]
+
+<p>Using the input, weights, and bias, the sigmoid output can be written as:</p>
+
+\[\begin{equation}
+\frac{1}{1+\exp(\sum_j w_j x_j -b) }
+\label{eq:sigmoid-output}
+ \end{equation}\]
+
+<p>Althought his looks quite different from perceptrons, the basic idea is quite
+ similar. Suppose $z\equiv w \cdot x +b$ is a very large number, then
+ $\sigma(z)\approx 1$. In other words for large weights and bias, the sigmoid
+ has an output close to one. This is very similar to perceptrons. On the other
+ hands when the weights and bias are very large negative numbers, $z \to
+ \infty$, and thus $\sigma(z)\approx 0$. Only when $z$ is in the midrange, the
+ sigmoid differs significantly from perceptrons.</p>
+
+<p>Perhaps when looking at the shape of a sigmoid function its affect becomes more
+clear:</p>
+
+<p style="text-align: center;"><img src="/assets/sigmoid-function.svg" alt="sigmoid" /></p>
+
+<p>This function is not just one or zero like that of a perceptron. In fact its a
+smoothed version of a perceptron function shown below:</p>
+
+<p style="text-align: center;"><img src="/assets/perceptron-function.svg" alt="sigmoid" /></p>
+
+<p>If the sigmoid function would have been defined as a step-function, it would
+infact be a perceptron! This, because the output would be either 0 or 1
+depending on $\sigma$ being negative or positive.</p>
+
+<p>The smoothness of $\sigma$ makes it, that small changes $\Delta w_j$ or $\Delta
+b$ result in mall changes  $\Delta \text{output}$. Using a bit of calculus, one
+could even write:</p>
+
+\[\begin{equation}
+\Delta \text{output} = \sum\limits_j \frac{\partial \;\text{output}}{\partial
+w_j}\Delta w_j +\frac{\partial \;\text{output}}{\partial b}\Delta b
+ \end{equation}\]
+
+<p>This expression says that $\Delta \text{output}$ is linearly depending on the
+$\Delta w_j$  and $\Delta b$. Dispite the fact that sigmoids show very similar
+qualitative behaviour as perceptrons, this linearity allows us to figure out how
+changing weights and biases changes the output. And in a system of neurons, this
+allows for learning.</p>
+
+<p>In principle, one could use other types of functions in place of $\sigma$. In
+fact, in the field of NN and ML, different functions are used for differnt
+ocasions. However, in most common theory the $\sigma$ functions are used due to
+their simplistic derivative properties.</p>
+
+<hr />
+
+<p>In the next post we will be looking more into the general architecture of a 
+neural network. These networks concist of multple sigmoid or perceptrons
+combined together.</p>
+
+<hr />
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>$\sigma$ is also called the logistic function, and this new class of neurons called logistic neurons. These terms are used by many people working with neural nets. It’s useful to remember this. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+inlineMath: [['$','$'], ['\\(','\\)']],
+processEscapes: true},
+jax: ["input/TeX","input/MathML","input/AsciiMath","output/CommonHTML"],
+extensions: ["tex2jax.js","mml2jax.js","asciimath2jax.js","MathMenu.js","MathZoom.js","AssistiveMML.js", "[Contrib]/a11y/accessibility-menu.js"],
+TeX: {
+extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"],
+equationNumbers: {
+autoNumber: "AMS"
+}
+}
+});
+</script>
+
+  </body>
+</html>
+
