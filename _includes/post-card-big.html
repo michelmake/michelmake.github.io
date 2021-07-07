@@ -1,0 +1,22 @@
+<div class="height-full text-left {% if site.style == 'dark' %}box-shadow{% else %}border border-gray-light{% endif %} bg-white rounded-1 p-3">
+  <div class="d-flex flex-justify-between flex-items-start mb-1">
+    <h1 class="f2 lh-condensed mb-1">
+      <a href="{{ site.baseurl }}{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </h1>
+  </div>
+  <hr>
+  <div>
+    <p class="{% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %} mb-5">
+        <div class="col-sm-12"  >
+          <center>
+            <a href="{{ post.url }}" ><img src="{{ post.thumbnail }}" style="max-width: 70%" /></a>
+          </center>
+        </div>
+        {{ post.excerpt }}
+    </p>
+  </div>
+  <hr>
+  <div class="text-gray mb-2 ws-normal">{{ post.date | date: "%b %d, %Y"}}</div>
+</div>

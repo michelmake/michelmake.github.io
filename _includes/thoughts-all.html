@@ -1,0 +1,9 @@
+<h2 {% if site.style == 'dark' %}class="text-white"{% endif %}>All posts from new to old</h2>
+<p class="f4 mb-4 {% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}"><hr></p>
+<div class="d-sm-flex flex-wrap gutter-condensed mb-4">
+  {% for post in site.posts %}
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-2">
+      {% include post-card-big.html %}
+    </div>
+  {% endfor %}
+</div>
