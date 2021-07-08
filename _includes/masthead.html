@@ -9,7 +9,7 @@
 <p class="mb-3 f4 {% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">
   {{ user.bio }}
 </p>
-
+    <hr>
 {% if include.metadata %}
   <div class="f4 mb-6">
     {% if user.name %}
@@ -53,5 +53,10 @@
     {% if user.hireable %}
       <span title="Hire me" class="d-inline-block f5 rounded-2 text-white bg-green py-1 px-2">Available for hire</span>
     {% endif %}
+    <hr>
+    <div class="mb-3">
+      <li><a href="{{ "posts" | relative_url }}" {% if site.style == 'dark' %}class="text-white"{% endif %} aria-label="my cv">All Blog Posts</a></li>
+      <!--li><a href="{{ "posts" | relative_url }}" {% if site.style == 'dark' %}class="text-white"{% endif %} aria-label="my cv">Neural Networks</a></li-->
+    </div>
   </div>
 {% endif %}
