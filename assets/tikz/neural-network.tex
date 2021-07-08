@@ -6,16 +6,38 @@
 \usepackage{./nn}
 
 \begin{document}
-    \begin{neuralnetwork}[height=4]
-        \newcommand{\x}[2]{$x_#2$}
-        \newcommand{\y}[2]{$\hat{y}_#2$}
-        \newcommand{\hfirst}[2]{\small $h^{(1)}_#2$}
-        \newcommand{\hsecond}[2]{\small $h^{(2)}_#2$}
-        \basiclayer[count=3, bias=false]
-        \basiclayer[count=4, bias=false] \linklayers
-        \basiclayer[count=1,] \linklayers
-        \arrowlayer[count=1 ] \linklayers
-        \node (D) at (7.8, -2.4) {output};
+    \begin{neuralnetwork}[nodespacing=7mm, layerspacing=35mm,
+    maintitleheight=5.5em, layertitleheight=12em,
+    height=4, toprow=false, nodesize=17pt, style={},
+    title={}, titlestyle={}]
+         \newcommand{\nodetextoutA}[4]{$0$}
+         \newcommand{\nodetextoutB}[4]{$1$}
+         \newcommand{\nodetextoutC}[4]{$2$}
+         \newcommand{\nodetextoutD}[4]{$3$}
+         \newcommand{\nodetextoutE}[4]{$4$}
+         \newcommand{\nodetextoutF}[4]{$5$}
+         \newcommand{\nodetextoutG}[4]{$6$}
+         \newcommand{\nodetextoutH}[4]{$7$}
+         \newcommand{\nodetextoutI}[4]{$8$}
+         \newcommand{\nodetextoutJ}[4]{$9$}
+
+        \basiclayer[count=8, bias=false, title={Input layer (748 neurons)}, exclude={0}]
+        \basiclayer[count=14, bias=false, title={Hidden layer ($n=15$ neurons)}] \linklayers
+        \basiclayer[count=10, title={Output layer (0 to 9 digits)}] \linklayers
+        \arrowlayer[count=10, ]
+        \link[style={link2}, labelpos=midway,label=\nodetextoutA, from layer=2, from node=1, to layer=3, to node=1];
+        \link[style={link2}, labelpos=midway,label=\nodetextoutB, from layer=2, from node=2, to layer=3, to node=2];
+        \link[style={link2}, labelpos=midway,label=\nodetextoutC, from layer=2, from node=3, to layer=3, to node=3];
+        \link[style={link2}, labelpos=midway,label=\nodetextoutD, from layer=2, from node=4, to layer=3, to node=4];
+        \link[style={link2}, labelpos=midway,label=\nodetextoutE, from layer=2, from node=5, to layer=3, to node=5];
+        \link[style={link2}, labelpos=midway,label=\nodetextoutF, from layer=2, from node=6, to layer=3, to node=6];
+        \link[style={link2}, labelpos=midway,label=\nodetextoutG, from layer=2, from node=7, to layer=3, to node=7];
+        \link[style={link2}, labelpos=midway,label=\nodetextoutH, from layer=2, from node=8, to layer=3, to node=8];
+        \link[style={link2}, labelpos=midway,label=\nodetextoutI, from layer=2, from node=9, to layer=3, to node=9];
+        \link[style={link2}, labelpos=midway,label=\nodetextoutJ, from layer=2, from node=10, to layer=3, to node=10];
+        %\node (D) at (7.8, -2.4) {output};
+
+        % The assign it:
 
 %        % Top arros and text
 %        \node (A) at (1.3, 0) {$w + \Delta w$};
