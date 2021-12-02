@@ -1,5 +1,10 @@
---- title: "Gradient Decent for Learning" published: true tag: nn-dl thumbnail:
-/assets/parabolic.svg ---
+---
+title: "Gradient Decent for Learning"
+published: true
+tag: nn-dl
+thumbnail: /assets/parabolic.svg
+---
+
 
 This post, similar to the previous one, will focus on how a neural network can
 be used to identify handwritten digits. This is a very popular introductory
@@ -15,18 +20,12 @@ the [book by Michael Nielsen](http://neuralnetworksanddeeplearning.com/).
 This network to classify handwritten digits will take digital scans of single
 digit numbers. The grayscale, 28 by 28 pixel images of scanned handwritten
 digits are used as input to a neural network of which the output is a number
-between 0 and 9.
-
-The greyscale value between 0.0 and 1.0 of each pixel is used as an input to the
-input layer of neurons. Hence, the input layer consists of $28 \times 28 = 784$
-neurons.
-
-To train the network, a data set provided
+between 0 and 9. The greyscale value between 0.0 and 1.0 of each pixel is used
+as an input to the input layer of neurons. Hence, the input layer consists of
+$28 \times 28 = 784$ neurons. To train the network, a data set provided
 [here](http://yann.lecun.com/exdb/mnist/) is used. This set contains a 60,000
 training sets and 10,000 test sets. A set contains both the images and the
-digits they are representing.
-
-The data can also be found in the
+digits they are representing. The data can also be found in the
 [repository](https://github.com/michelmake/nn-digit-problem/tree/main/mnist)
 where we will eventually build the digit-recognition tool in the coming posts.
 
@@ -61,7 +60,8 @@ The straight brackets $||\cdot||$ is the L2 or Euclidian norm of a vector.
 $C(w,b)$ is also known as the *quadratic* cost function or *mean squared error$
 (MSE). A few important observations when looking at the cost function:
 
-- $C(w,b)\leq 0$ - $C(w,b)\to 0$ for $y(x) \to a$ for all $x$
+- $C(w,b)\leq 0$
+- $C(w,b)\to 0$ for $y(x) \to a$ for all $x$
 
 The obvious conclusion is that our, to be designed, alrogrithm performs well,
 when $C(w,b)$ is small, or $C(w,b)\ll0$. So in other words, the aim of our
@@ -97,8 +97,9 @@ is a set of many variables. Although this function consists of many variables,
 it is convenient to think of this function as a function of two variables only.
 E.g. $C(x,y)$ as shown below:
 
-{:refdef: style="text-align: center;"} ![weights and
-biasn](/assets/parabolic.svg) {: refdef}
+{:refdef: style="text-align: center;"}
+![weights and biasn](/assets/parabolic.svg)
+{:refdef}
 
 We want to find the global minimum of this function. Global here simply refers
 to the lowest possible value the function can get to. You can imagine dropping a
@@ -110,7 +111,7 @@ billions of weight and biases. Sketching a mental image in such case is tricky!
 Ok so let's assume we pick a point on the function and we move a very small stem
 in a certain direction, then the chance of of our functin $C$ would be:
 
-$$ \begin{equation} \Delta C(v) \approx \nabla C \cdot \delta v
+$$ \begin{equation} \Delta C(v) \approx \nabla C \cdot \Delta v
 \label{eq:increment}  \end{equation} $$
 
 Here $\Delta C(v)$ is the change of $C$ due to the incremental change of $v$
@@ -125,7 +126,7 @@ where $\eta$ is a small positive number sometimes known at the *learning rate*.
 Using the expression for $\Delta v$ in the previous expression for $\Delta C(v)$
 gives:
 
-$$ \begin{equation} \Delta C \approx = - \eta \nabla C \cdot \nabla C = - \eta
+$$ \begin{equation} \Delta C \approx - \eta \nabla C \cdot \nabla C = - \eta
 ||\nabla C ||^2 \label{eq:delta-c} \end{equation} $$
 
 Since the squared norm on the right is always greater than or equal to zero, the
